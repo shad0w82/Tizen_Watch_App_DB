@@ -1,1 +1,1 @@
-prova prova
+As most of you already know, Samsung has recently alerted the public that the Tizen service will be terminated as of September 30, 2025. This means that after that date, we will no longer be able to download applications and watch faces for our Tizen products anymore.
