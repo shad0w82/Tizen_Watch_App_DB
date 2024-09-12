@@ -37,7 +37,7 @@ Switch to PCAPdroid (don't kill the Galaxy Wearable app!) and select **PCAP file
 <a href="imgs/pcap_stop.png"><img src="imgs/pcap_stop.png" height="370"/></a>
 </p></div>
 
-### **Extract application packet** ###
+### **Extract application packet** [TL:DR -> <a class="lightBoxVideoLink" href="imgs/vid_wireshark.mp4">Video here</a>] ###
 Inside of the PCAP file there's the complete dump of the data transferred from Samsung servers, including the TPK/WGT packet you installed on your watch. So now we need a way to extract and save it somewhere safe, so that we could install it anytime we like, even after the shutdown of the Galaxy Store!  
 To do so, we need a tool able to parse and interpret the PCAP dump, in order to find the data packets that form our desired application. This tool exists and it's completely free: 
 
@@ -62,7 +62,7 @@ If you did everything correct, you should see a new window like the one in the i
 <a href="imgs/wireshark2.png"><img src="imgs/wireshark2.png" height="200"/></a>
 </p></div>
 
-### **Re-sign App packet and install** ###
+### **Create new Partner Certificate** ###
 Unfortunately, since the downloaded packet is not signed with Samsung Platform certificates, we need to find a way to re-sign with new certificates in order to be able to install it on the watch itself. But don't worry, Samsung got us covered with Tizen Studio utilities!
 
 First of all, enable Debugging mode on your watch inside of **About watch** menu in Settings. After that, connect your watch to the same Wi-Fi network of your PC, and write down the IP address assigned to it, we will need it later. Install [Tizen Studio](https://developer.tizen.org/ko/development/tizen-studio/download?langredirect=1) on your PC/MAC so that you have all the tools needed to sign and install the application on the watch, mainly :
@@ -70,16 +70,75 @@ First of all, enable Debugging mode on your watch inside of **About watch** menu
 - Device Manager
 - Certificate Manager
 
-Once everything is installed, open a terminal, go to the folder <INST_FOLDER>/tizen-studio/tools> where INST_FOLDER is the root folder where you installed Tizen Studio. Next, perform this commands:
+Once everything is installed, open a terminal, go to the folder **\<INST_FOLDER\>/tizen-studio/tools>** where INST_FOLDER is the root folder where you installed Tizen Studio. Next, perform this commands:
 
 ```sh
 ./sdb start-server
-./sdb connect [watchIP]:26101 #use the IP address you wrote down before
+./sdb connect <watchIP>:26101                   #use the IP address you wrote down before
+# Check your watch and accept the RSA key to pair with your PC.
+./sdb connect <watchIP>:26101                   #again, to be sure to be connected to the watch
+./sdb shell /opt/etc/duid-gadget anystring      
+# The string beginning with '2.0#' is your device unique identifier (DUID)
 ```
-
-Check your watch and accept the RSA key to pair with your PC.
+ 
 <div class="imageGallery4"><p align="center">
 <a href="imgs/sdb1.png"><img src="imgs/sdb1.png"/></a>
+</p></div>
+
+Now open Certification Manager app and create a new certificate:
+- Click on the '+' sign to start the creation of the certificate
+- Select SAMSUNG as the type of certificate profile
+- Select Mobile/Wearable and give a name to the profile
+- Create a new author certificate
+- Fill the fields with your name and a password
+- Login to your Samsung account from the browser
+- Create a distributor certificate
+- Select **Partner** as privilege, and add your DUID
+
+Your certificate is created and the profile is activated
+
+<div class="imageGallery5"><p align="center">
+<a href="imgs/cert1.png"><img src="imgs/cert1.png" height="200"/></a>
+<a href="imgs/cert2.png"><img src="imgs/cert2.png" height="200"/></a>
+<a href="imgs/cert3.png"><img src="imgs/cert3.png" height="200"/></a>
+<a href="imgs/cert4.png"><img src="imgs/cert4.png" height="200"/></a>
+<a href="imgs/cert5.png"><img src="imgs/cert5.png" height="200"/></a>
+<a href="imgs/cert6.png"><img src="imgs/cert6.png" height="200"/></a>
+<a href="imgs/cert7.png"><img src="imgs/cert7.png" height="200"/></a>
+<a href="imgs/cert8.png"><img src="imgs/cert8.png" height="200"/></a>
+<a href="imgs/cert9.png"><img src="imgs/cert9.png" height="200"/></a>
+<a href="imgs/cert10.png"><img src="imgs/cert10.png" height="200"/></a>
+<a href="imgs/cert11.png"><img src="imgs/cert11.png" height="200"/></a>
+<a href="imgs/cert12.png"><img src="imgs/cert12.png" height="200"/></a>
+</p></div>
+
+### **Re-sign and install application packet** ###
+We're almost there! Now we have everything we need to sign the downloaded application packet (TPK or WGT) with our new Partner Certificate!  
+Just open your terminal in the **\<INST_FOLDER\>/tizen-studio/tools/ide/bin** and issue this command:
+
+```sh
+./tizen package -t <tpk|wgt|rpk> -s <cert-profile> -o <output-dir> -- <packet-to-sign>
+# -t (--type) {tpk|wgt|rpk}               Packaging type
+# -s (--sign) <security profile>          Specify the security profile name
+# -o (--output) <output path>             Specify the output file path.
+# <packet-to-sign>                        Full path of the app to sign
+```
+<div class="imageGallery6"><p align="center">
+<a href="imgs/sign1.png"><img src="imgs/sign1.png"/></a>
+</p></div>
+
+Last step! You just need to input one last command, and the application will be on your watch, alive and kicking!  
+Open your terminal in the **\<INST_FOLDER\>/tizen-studio/tools** and issue this command:
+
+```sh
+./sdb install <signed-app>
+# <signed-app>                            Full path of the signed app to install
+```
+
+If everything went smoothly you should see a log like the one in the image below:
+
+<div class="imageGallery6"><p align="center">
+<a href="imgs/install1.png"><img src="imgs/install1.png"/></a>
 </p></div>
 
 {% include lightbox-elements.html %}
