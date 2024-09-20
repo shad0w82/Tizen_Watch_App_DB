@@ -56,7 +56,7 @@ Scroll down until you see a green line starting with **GET /astore_bin** and sel
 <a href="imgs/wireshark1.png"><img src="imgs/wireshark1.png" height="335"/></a>
 </p></div>
 
-If you did everything correct, you should see a new window like the one in the image below. Select the line containing the **App_[numbers].tpk** and click Save, give it a meaningful name, and you're done! The application is extracted and ready to be stored somewhere until your beloved watch still runs strong, not having to depend on Galaxy Store anymore! 
+If you did everything correct, you should see a new window like the one in the image below. Select the line containing the **App_[numbers].tpk or App_[numbers].wgt** and click Save, give it a meaningful name, and you're done! The application is extracted and ready to be stored somewhere until your beloved watch still runs strong, not having to depend on Galaxy Store anymore! 
 
 <div class="imageGallery3"><p align="center">
 <a href="imgs/wireshark2.png"><img src="imgs/wireshark2.png" height="200"/></a>
@@ -65,7 +65,9 @@ If you did everything correct, you should see a new window like the one in the i
 ### **Create new Partner Certificate** ###
 Unfortunately, since the downloaded packet is not signed with Samsung Platform certificates, we need to find a way to re-sign with new certificates in order to be able to install it on the watch itself. But don't worry, Samsung got us covered with Tizen Studio utilities!
 
-First of all, enable Debugging mode on your watch inside of **About watch** menu in Settings. After that, connect your watch to the same Wi-Fi network of your PC, and write down the IP address assigned to it, we will need it later. Install [Tizen Studio](https://developer.tizen.org/ko/development/tizen-studio/download?langredirect=1) on your PC/MAC so that you have all the tools needed to sign and install the application on the watch, mainly :
+First of all, enable Debugging mode on your watch inside of **About watch** menu in Settings. After that, connect your watch to the same Wi-Fi network of your PC, and write down the IP address assigned to it, we will need it later (If you do not know the IP address, you can find it on the device under Settings->Connections->Wi-Fi->Wi-Fi networks->\<wifi_name\> and at the bottom of the list). 
+
+Install [Tizen Studio](https://developer.tizen.org/ko/development/tizen-studio/download?langredirect=1) on your PC/MAC so that you have all the tools needed to sign and install the application on the watch, mainly :
 - SDB command line tool
 - Device Manager
 - Certificate Manager
