@@ -1,3 +1,11 @@
+
+
+<span style="display:block" class="note">
+1st October 2025 Update
+Doomsday has come. S​u​s​p​e​n​s​i​o​n​ ​o​f​ ​r​e​-​d​o​w​n​l​o​a​d​i​n​g​ ​o​f​ ​p​r​e​-​p​u​r​c​h​a​s​e​d​ ​c​o​n​t​e​n​t​ ​f​r​o​m​ ​G​a​l​a​x​y​ ​S​t​o​r​e​ ​a​n​d​ ​t​e​r​m​i​n​a​t​i​o​n​ ​o​f​ ​T​i​z​e​n​ ​W​a​t​c​h​ ​s​e​r​v​i​c​e​ has been activated.
+Therefore most of the sections of the following guide are now useless. I will keep it here for archive purposes.
+</span>
+
 Samsung has recently alerted the public that the [Tizen service will be terminated as of September 30, 2025](https://seller.samsungapps.com/notice/getNoticeDetail.as?csNoticeID=0000009034).  
 This means that after that date, we will no longer be able to download applications and watch faces for our Tizen products anymore. Moreover, in case you have to reset your watch or change the phone, you won't be able to restore you watch anymore, because even the stock apps, like reminders, stop watch, browser, weather and  many others you won't be able to download!
 
