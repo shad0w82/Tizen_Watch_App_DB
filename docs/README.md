@@ -1,7 +1,7 @@
 
 
 <span style="display:block" class="note">
-<h3 class="black_title">1st October 2025 Update: Doomsday</h3>
+<h3 style="color:#000000;">1st October 2025 Update: Doomsday</h3>
 Time has come. S​u​s​p​e​n​s​i​o​n​ ​o​f​ ​r​e​-​d​o​w​n​l​o​a​d​i​n​g​ ​o​f​ ​p​r​e​-​p​u​r​c​h​a​s​e​d​ ​c​o​n​t​e​n​t​ ​f​r​o​m​ ​G​a​l​a​x​y​ ​S​t​o​r​e​ ​a​n​d​ ​t​e​r​m​i​n​a​t​i​o​n​ ​o​f​ ​T​i​z​e​n​ ​W​a​t​c​h​ ​s​e​r​v​i​c​e​ has been activated.
 Therefore most of the sections of the following guide are now useless. I will keep it here for archive purposes.
 </span>
