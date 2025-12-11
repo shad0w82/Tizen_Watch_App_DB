@@ -1,7 +1,31 @@
 
 
 <span style="display:block" class="note">
-<h3 style="color:#000000;">1st October 2025 Update: Doomsday</h3>
+<h3 style="color:#000000;">11st December 2025 Update: Armageddon</h3>
+Samsung Developers decided to remove also the ability to create certificates using the Certification Manager app. So now, even if you have your preferred app backed up, you cannot sign it to install it back on the device.
+What if I already signed the app months back? Unfortunately if you followed the guide to generate a Partner Certificate, the expiration date of this certificate was 1 year. Therefore if the certificate has expired, the signed app has expired too.
+There may be a possible solution though.
+</span>
+
+### **Request a new certificate to Samsung Developers** ###
+According to [this post](https://forum.developer.samsung.com/t/about-tizen-wearable-certificate/42748) found on Samsung Developer Forums, Samsung has planned to issue a development certificate once per device by DUID, if you send an e-mail before March 26th with this template:
+
+```
+Subject: Request a Tizen development certificate
+
+Content:
+
+    Model: e.g.) SM-R000
+
+    Privilege level: e.g.) Public
+
+    DUID: e.g.) 2.0#ABCDEFv0GHI=,2.0#JKLMq31NOPQRS=
+
+```
+If you get the certificates, you should still be able to sign and re-install apps, following the last section of this guide.
+
+<span style="display:block" class="note">
+<h3 style="color: #000000;">1st October 2025 Update: Doomsday</h3>
 Time has come. S​u​s​p​e​n​s​i​o​n​ ​o​f​ ​r​e​-​d​o​w​n​l​o​a​d​i​n​g​ ​o​f​ ​p​r​e​-​p​u​r​c​h​a​s​e​d​ ​c​o​n​t​e​n​t​ ​f​r​o​m​ ​G​a​l​a​x​y​ ​S​t​o​r​e​ ​a​n​d​ ​t​e​r​m​i​n​a​t​i​o​n​ ​o​f​ ​T​i​z​e​n​ ​W​a​t​c​h​ ​s​e​r​v​i​c​e​ has been activated.
 Therefore most of the sections of the following guide are now useless. I will keep it here for archive purposes.
 </span>
