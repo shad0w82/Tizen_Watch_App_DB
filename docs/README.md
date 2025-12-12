@@ -1,7 +1,7 @@
 <div markdown="1" class="note">
 <h3>11st December 2025 Update: Armageddon</h3>
-Samsung Developers decided to remove also the ability to create certificates using the Certification Manager app. So now, even if you have your preferred app backed up, you cannot sign it to install it back on the device.</br>
-<em>What if I already signed the app months back?</em></br>
+Samsung Developers decided to remove also the ability to create certificates using the Certification Manager app. So now, even if you have your preferred app backed up, you cannot sign it to install it back on the device.<br />
+<em>What if I already signed the app months back?</em><br />
 Unfortunately if you followed the guide to generate a Partner Certificate, the expiration date of this certificate was 1 year. Therefore if the certificate has expired, the signed app has expired too.
 There may be a possible solution though.
 </div>
