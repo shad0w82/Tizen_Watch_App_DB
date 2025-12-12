@@ -1,11 +1,10 @@
-
-
-<span style="display:block" class="note">
+<div markdown="1" class="note">
 <h3>11st December 2025 Update: Armageddon</h3>
 Samsung Developers decided to remove also the ability to create certificates using the Certification Manager app. So now, even if you have your preferred app backed up, you cannot sign it to install it back on the device.
 What if I already signed the app months back? Unfortunately if you followed the guide to generate a Partner Certificate, the expiration date of this certificate was 1 year. Therefore if the certificate has expired, the signed app has expired too.
 There may be a possible solution though.
-</span>
+</div>
+
 
 ### **Request a new certificate to Samsung Developers** ###
 According to [this post](https://forum.developer.samsung.com/t/about-tizen-wearable-certificate/42748) found on Samsung Developer Forums, Samsung has planned to issue a development certificate once per device by DUID, if you send an e-mail before March 26th with this template:
@@ -24,11 +23,11 @@ Content:
 ```
 If you get the certificates, you should still be able to sign and re-install apps, following the last section of this guide.
 
-<span style="display:block" class="note">
+<div markdown="1" class="note">
 <h3>1st October 2025 Update: Doomsday</h3>
 Time has come. S​u​s​p​e​n​s​i​o​n​ ​o​f​ ​r​e​-​d​o​w​n​l​o​a​d​i​n​g​ ​o​f​ ​p​r​e​-​p​u​r​c​h​a​s​e​d​ ​c​o​n​t​e​n​t​ ​f​r​o​m​ ​G​a​l​a​x​y​ ​S​t​o​r​e​ ​a​n​d​ ​t​e​r​m​i​n​a​t​i​o​n​ ​o​f​ ​T​i​z​e​n​ ​W​a​t​c​h​ ​s​e​r​v​i​c​e​ has been activated.
 Therefore most of the sections of the following guide are now useless. I will keep it here for archive purposes.
-</span>
+</div>
 
 Samsung has recently alerted the public that the [Tizen service will be terminated as of September 30, 2025](https://seller.samsungapps.com/notice/getNoticeDetail.as?csNoticeID=0000009034).  
 This means that after that date, we will no longer be able to download applications and watch faces for our Tizen products anymore. Moreover, in case you have to reset your watch or change the phone, you won't be able to restore you watch anymore, because even the stock apps, like reminders, stop watch, browser, weather and  many others you won't be able to download!
